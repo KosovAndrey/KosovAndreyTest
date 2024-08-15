@@ -3,27 +3,33 @@ package kosovandrey.test.result;
 import java.util.Objects;
 
 public class SumWeightGroupResult {
-    private String group = "";
-    private Long sumWeight = 0L;
+    private String group;
+    private long sumWeight;
 
-    public SumWeightGroupResult() {}
+    public SumWeightGroupResult() {
+        this.group = "";
+        this.sumWeight = 0L;
+    }
 
-    public SumWeightGroupResult(String group, Long sumWeight) {
-        this();
+    public SumWeightGroupResult(String group, long sumWeight) {
         this.group = group;
         this.sumWeight = sumWeight;
     }
 
-    public String getGroup() { return this.group; }
+    public String getGroup() {
+        return group;
+    }
 
-    public Long getSumWeight() { return this.sumWeight; }
+    public long getSumWeight() {
+        return sumWeight;
+    }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        SumWeightGroupResult that = (SumWeightGroupResult) obj;
-        return Objects.equals(group, that.group) && Objects.equals(sumWeight, that.sumWeight);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SumWeightGroupResult that = (SumWeightGroupResult) o;
+        return sumWeight == that.sumWeight && Objects.equals(group, that.group);
     }
 
     @Override

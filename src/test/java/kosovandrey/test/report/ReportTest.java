@@ -35,7 +35,7 @@ public class ReportTest {
 
         SumWeightGroupResult sumWeightGroupResult = new SumWeightGroupResult("grp1", 250L);
 
-        Result result = new Result(duplicateResult, maxMinWeightResult, sumWeightGroupResult);
+        Result result = new Result(duplicateResult, maxMinWeightResult, List.of(sumWeightGroupResult));
 
         Report report = new Report(result);
         List<String> reportOutput = report.getReport();
